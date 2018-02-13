@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Trades - New Trade</title>
+
+    <!-- Javascript libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!--<script type="text/javascript" src="libs/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/angular.min.js"></script>-->
+
+    <!-- Styles libraries -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--<link href="libs/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />-->
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/Constants.js"></script>
+    <script type="text/javascript" src="js/NewTradeClient.js"></script>
+
+    <!-- Styles -->
+    <link href="css/trades.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+
+<body>
+	<h3>New Trade</h3>
+	<hr />
+	<div style="clear:both;"> </div>
+	<div class="container" style="width: 50%;float: left;" ng-app="appTradeSellCurrency" ng-controller="controllerSellCurrency">
+	  <div class="row">
+	    <div class="col-lg-2" style="width: 40%;text-align:center;">
+	    	<p>Sell Currency</p>
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;">
+	    	<p></p>
+	    </div>
+	    <div class="col-lg-2" style="width: 10%;text-align:center;">      
+	      <p>Rate</p>
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 40%;text-align:center;">
+	      <p>Buy Currency</p>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-lg-2" style="width: 40%;text-align:center;">
+			<p><select id="SellCurrency" style="width: 100%;" onchange="calculateRate()">
+				<option value="void"></option>
+				<option ng-repeat="x in currencies" value="{{x}}">{{x}}</option>
+			</select></p>
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;text-align:center;">
+	    	<p><span class="glyphicon glyphicon-play"></p>
+	    </div>
+	    <div class="col-lg-2" style="width: 10%;text-align:center;">      
+	    	<p id="currentRate">0</p>
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;text-align:center;">
+	    	<p><span class="glyphicon glyphicon-play"></p>
+	    </div>
+	    <div class="col-lg-2" style="width: 40%;text-align:center;">
+	    	<p><select style="width: 100%;" id="BuyCurrency" onchange="calculateRate()">
+				<option value="void"></option>
+				<option ng-repeat="x in currencies" value="{{x}}">{{x}}</option>
+			</select></p>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-lg-2" style="width: 40%;text-align:center;">
+	    	<p>Sell Amount</p>
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 10%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 40%;text-align:center;">
+	      <p>Buy Amount</p>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-lg-2" style="width: 40%;text-align:center;">
+	    	<p><input style="width: 100%;text-align:center;" id="inputSellAmount" type=number step=0.01 oninput="checkAndUpdateInputSellAmount()" value="0"></p>
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 10%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 40%;text-align:center;">
+	      <p><input style="width: 100%;text-align:center;" disabled id="inputBuyAmount" type=number step=0.01 value="0"></p>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-lg-2" style="width: 40%;">
+	    	<p><button type="button" onclick="createTrade()">Create</button></p>
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 10%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 5%;">
+	    </div>
+	    <div class="col-lg-2" style="width: 40%;text-align:right;">
+	      <p><button type="button" onclick="cancelTrade()">Cancel</button></p>
+	    </div>
+	  </div>
+
+	</div>
+
+</body>
+</html>

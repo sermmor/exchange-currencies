@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Trades - View</title>
+
+    <!-- Javascript libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!--<script type="text/javascript" src="libs/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/angular.min.js"></script>-->
+
+    <!-- Styles libraries -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--<link href="libs/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />-->
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/Constants.js"></script>
+    <script type="text/javascript" src="js/TableTradeClient.js"></script>
+
+    <!-- Styles -->
+    <link href="css/trades.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+
+<body>
+	<h3>Booked Trades</h3>
+	<hr class="containerHrAllTrades" />
+	<div style="clear:both;"> </div>
+	<div id="containerMain" class="containerAllTrades" ng-app="appAllTrades" ng-controller="controllerAllTrades">
+		<div style="text-align: right;">
+			<p><button type="button" onclick="newTrade()">New Trade</button></p>
+		</div>
+		<table id="containerTradesTable" class="tableAllTrades">
+		<tr style="background: #efefef;">
+			<th scope="col" class="tableAllTradesHeader">Sell CCY</th>
+			<th scope="col" class="tableAllTradesHeader">Sell Amount</th>
+			<th scope="col" class="tableAllTradesHeader">Buy CCY</th>
+			<th scope="col" class="tableAllTradesHeader">Buy Amount</th>
+			<th scope="col" class="tableAllTradesHeader">Rate</th>
+			<th scope="col" class="tableAllTradesHeader">Date Booked</th>
+		</tr>
+		<tr ng-repeat="x in allTrades">
+			<td class='tableAllTradesCell'>{{x.SellCurrency}}</td>
+			<td class='tableAllTradesCell'>{{x.SellAmount}}</td>
+			<td class='tableAllTradesCell'>{{x.BuyCurrency}}</td>
+			<td class='tableAllTradesCell'>{{x.BuyAmount}}</td>
+			<td class='tableAllTradesCell'>{{x.Rate}}</td>
+			<td class='tableAllTradesCell'>{{x.DateBooked}}</td>
+		</tr>
+		</table>
+	</div>
+</body>
+</html>

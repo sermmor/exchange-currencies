@@ -1,0 +1,48 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+hr {
+	border-top: 3px solid #000;
+	width: 50%;
+	float:left;
+}
+
+.containerHrAllTrades
+{
+	width: 60%;
+}
+
+.containerAllTrades {
+	text-align:center;
+	width: 60%;
+}
+
+.tableAllTrades{
+	width: 100%;
+}
+
+.tableAllTradesHeader{
+	border: 1px solid #000;
+	text-align:center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 1px;
+	width: 16.667%;
+}
+
+.tableAllTradesCell{
+	border: 1px solid #000;
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
