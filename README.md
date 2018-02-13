@@ -1,4 +1,4 @@
-#Exchange Currencies
+# Exchange Currencies
 ## What is it?
 A Client/Server web application (RESTful API) made with Python, Flask and AngularJS that create and show foreign exchange trades. This application use the external service [fixer.io](http://fixer.io/) for get the latest foreign exchange reference rates. 
 
