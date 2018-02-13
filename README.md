@@ -12,5 +12,5 @@ Bootstrap, AngularJS, Ajax, jQuery, CSS, HTML5, and Javascript.
 You can install all the python libraries needed using the scripts (for Linux and Windows) in ScriptsToInstallPythonLibraries folder.
 
 ## Screenshot
-![Capture1](https://raw.githubusercontent.com/sermmor/exchange-currencies/master/Captura1.png)
 ![Capture2](https://raw.githubusercontent.com/sermmor/exchange-currencies/master/Captura2.png)
+![Capture1](https://raw.githubusercontent.com/sermmor/exchange-currencies/master/Captura1.png)
